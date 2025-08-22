@@ -2,7 +2,6 @@ import socket
 from concurrent.futures import ThreadPoolExecutor
 
 
-
 def scan_port(target_ip, port):
     """Function to scan a single port on the specified host."""
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)  # Create a TCP socket
@@ -33,6 +32,7 @@ except socket.gaierror:
 
 MAX_THREADS = 64  # Maximum number of threads to use for scanning
 user_threads = int(input(f"Enter the number of threads to use (max {MAX_THREADS}): "))
+
 
 if user_threads > MAX_THREADS:
     print(f"Number of threads exceeds maximum limit using {MAX_THREADS}.")
